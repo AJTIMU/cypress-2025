@@ -1,0 +1,153 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-02-01T12:35:38.815Z",
+    "end": "2025-02-01T12:35:41.015Z",
+    "duration": 2200,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a2b457be-1774-4da8-808e-b81449803737",
+      "title": "",
+      "fullFile": "cypress/e2e/Learning web/Mouseoperation.cy.js",
+      "file": "cypress/e2e/Learning web/Mouseoperation.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "918cad3b-4d4a-4832-9e04-fcb2c2c27eb2",
+          "title": "MouseHover",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Mouseover TC ",
+              "fullTitle": "MouseHover Mouseover TC ",
+              "timedOut": null,
+              "duration": 171,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://demo.opencart.com');\ncy.wait(3000);\ncy.get('#narbar-menu > ul > li:nth-child(1) > div > div > ul > li:nth-child(2) > a').should('not.be.visible');\ncy.get('.nav > :nth-child(1) > .dropdown-toggle').trigger('mouseover').click();\ncy.get('#narbar-menu > ul > li:nth-child(1) > div > div > ul > li:nth-child(2) > a').should('be.visible');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://demo.opencart.com/\n\nThe response we received from your web server was:\n\n  > 429: Too Many Requests\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://demo.opencart.com/\n\nThe response we received from your web server was:\n\n  > 429: Too Many Requests\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n    at <unknown> (http://localhost:51006/__cypress/runner/cypress_runner.js:130698:76)\n    at visitFailedByErr (http://localhost:51006/__cypress/runner/cypress_runner.js:130104:12)\n    at <unknown> (http://localhost:51006/__cypress/runner/cypress_runner.js:130681:13)\n    at tryCatcher (http://localhost:51006/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:51006/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:51006/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (http://localhost:51006/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (http://localhost:51006/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (http://localhost:51006/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (http://localhost:51006/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (http://localhost:51006/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (http://localhost:51006/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypressautomation/./cypress/e2e/Learning web/Mouseoperation.cy.js:4:7)",
+                "diff": null
+              },
+              "uuid": "c493e2dd-f086-4a56-8016-5fc0e3076c09",
+              "parentUUID": "918cad3b-4d4a-4832-9e04-fcb2c2c27eb2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Right Click Action approach 1",
+              "fullTitle": "MouseHover Right Click Action approach 1",
+              "timedOut": null,
+              "duration": 903,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://swisnl.github.io/jQuery-contextMenu/demo.html');\ncy.get('[class=\"context-menu-one btn btn-neutral\"]').trigger('contextmenu');\ncy.get('.context-menu-icon-copy').should('be.visible');\n// approach 2\ncy.visit('https://swisnl.github.io/jQuery-contextMenu/demo.html');\ncy.get('[class=\"context-menu-one btn btn-neutral\"]').rightclick().should('be.visible');",
+              "err": {},
+              "uuid": "b075bbfa-65db-4d6d-9a1d-259deb7c952d",
+              "parentUUID": "918cad3b-4d4a-4832-9e04-fcb2c2c27eb2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "double click ",
+              "fullTitle": "MouseHover double click ",
+              "timedOut": null,
+              "duration": 158,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick3');\ncy.frameLoaded('div#iframewrapper'); // iframe locator we have to use plug in for cy.load\n// approach 1 - trigger()\ncy.iframe('div#iframewrapper').find('[ondblclick=\"myFunction()\"]').trigger('dblclick').find('#field2').should('have.value', 'Hello World!');\n// approach  2 -- dblclick()\ncy.iframe('div#iframewrapper').find('[ondblclick=\"myFunction()\"]').dblclick.find('#field2').should('have.value', 'Hello World!');",
+              "err": {
+                "message": "TypeError: cy.iframe(...).find(...).dblclick.find is not a function",
+                "estack": "TypeError: cy.iframe(...).find(...).dblclick.find is not a function\n    at Context.eval (webpack://cypressautomation/./cypress/e2e/Learning web/Mouseoperation.cy.js:43:5)\n    at runnable.fn (https://swisnl.github.io/__cypress/runner/cypress_runner.js:137464:19)\n    at callFn (https://swisnl.github.io/__cypress/runner/cypress_runner.js:156061:21)\n    at Runnable.run (https://swisnl.github.io/__cypress/runner/cypress_runner.js:156048:7)\n    at <unknown> (https://swisnl.github.io/__cypress/runner/cypress_runner.js:161972:30)\n    at PassThroughHandlerContext.finallyHandler (https://swisnl.github.io/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://swisnl.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://swisnl.github.io/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://swisnl.github.io/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "96d4ec42-013d-498f-b6fd-c0ab451fb8c0",
+              "parentUUID": "918cad3b-4d4a-4832-9e04-fcb2c2c27eb2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b075bbfa-65db-4d6d-9a1d-259deb7c952d"
+          ],
+          "failures": [
+            "c493e2dd-f086-4a56-8016-5fc0e3076c09",
+            "96d4ec42-013d-498f-b6fd-c0ab451fb8c0"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1232,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

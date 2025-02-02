@@ -1,0 +1,91 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-02-01T12:05:48.136Z",
+    "end": "2025-02-01T12:05:51.921Z",
+    "duration": 3785,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "25800b61-2343-41ec-af29-8e803b5f6a0a",
+      "title": "",
+      "fullFile": "cypress/e2e/Raghavpal/pomdemo.cy.js",
+      "file": "cypress/e2e/Raghavpal/pomdemo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "POM Demo",
+          "fullTitle": "POM Demo",
+          "timedOut": null,
+          "duration": 2405,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');\nloginPage.enterUsername('Admin');\nloginPage.enterPassword('admin123');\nloginPage.clickLogin();",
+          "err": {
+            "message": "Error: Syntax error, unrecognized expression: ['name='username']",
+            "estack": "Error: Syntax error, unrecognized expression: ['name='username']\n    at find.error (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:8298:8)\n    at tokenize (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:8964:8)\n    at select (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:9423:20)\n    at Function.find (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:7734:9)\n    at jQuery.fn.init.find (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:9633:11)\n    at new jQuery.fn.init (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:9748:40)\n    at Object.query (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:17940:10)\n    at $Cy.$$ (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:139155:57)\n    at <unknown> (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:131087:18)\n    at Object.subjectFn (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:142971:16)\n    at $Cy.verifyUpcomingAssertions (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:142310:31)\n    at onRetry (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:142962:15)\n    at retryQuery (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:142975:10)\n    at <unknown> (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:143128:17)\n    at tryCatcher (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://opensource-demo.orangehrmlive.com/__cypress/runner/cypress_runner.js:2256:14)",
+            "diff": null
+          },
+          "uuid": "158e28f0-3b79-40c8-ac9f-8baa2b046736",
+          "parentUUID": "25800b61-2343-41ec-af29-8e803b5f6a0a",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "158e28f0-3b79-40c8-ac9f-8baa2b046736"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 2405,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

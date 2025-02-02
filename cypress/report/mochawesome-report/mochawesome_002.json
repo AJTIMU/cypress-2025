@@ -1,0 +1,221 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 1,
+    "failures": -1,
+    "start": "2025-02-01T12:03:03.712Z",
+    "end": "2025-02-01T12:03:09.744Z",
+    "duration": 6032,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 14.285714285714285,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c1cf7a2c-6c84-46c8-866b-1d1ceacd86e6",
+      "title": "",
+      "fullFile": "cypress/e2e/Learning web/Alerts.cy.js",
+      "file": "cypress/e2e/Learning web/Alerts.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ecfd3755-2027-4e06-a67a-b87c6f615bb6",
+          "title": "Alerts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Js alerts",
+              "fullTitle": "Alerts Js alerts",
+              "timedOut": null,
+              "duration": 2080,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://the-internet.herokuapp.com/javascript_alerts\");\ncy.get('[onclick=\"jsAlert()\"]').click();\ncy.on('window:alert', t => {\n  expect(t).to.contains(\"I am a JS Alert\");\n});\n// alert window automatically closed by cypress\ncy.get('#result').should('have.text', 'You successfully clicked an alert');",
+              "err": {},
+              "uuid": "7020081a-447a-43a8-ba76-5c4e3cb0e757",
+              "parentUUID": "ecfd3755-2027-4e06-a67a-b87c6f615bb6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Js confirm",
+              "fullTitle": "Alerts Js confirm",
+              "timedOut": null,
+              "duration": 338,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//   Ok button \ncy.visit(\"https://the-internet.herokuapp.com/javascript_alerts\");\ncy.get('[onclick=\"jsConfirm()\"]').click();\ncy.on('window:confirm', t => {\n  expect(t).to.contains(\"I am a JS Confirm\");\n});\n// alert window automatically closed by cypress using OK button by default \ncy.get('#result').should('have.text', 'You clicked: Ok');",
+              "err": {},
+              "uuid": "388f9944-b4ac-4b30-84f1-2e16b51c66e7",
+              "parentUUID": "ecfd3755-2027-4e06-a67a-b87c6f615bb6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Js confirm",
+              "fullTitle": "Alerts Js confirm",
+              "timedOut": null,
+              "duration": 360,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// using cancel\ncy.visit(\"https://the-internet.herokuapp.com/javascript_alerts\");\ncy.get('[onclick=\"jsConfirm()\"]').click();\ncy.on('window:confirm', t => {\n  expect(t).to.contains(\"I am a JS Confirm\");\n});\ncy.on('window:confirm', () => false); //    cypress close alert window using cancel buttons\ncy.get('#result').should('have.text', 'You clicked: Cancel');",
+              "err": {},
+              "uuid": "086c1609-624a-4b78-a12d-65ed53125d12",
+              "parentUUID": "ecfd3755-2027-4e06-a67a-b87c6f615bb6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Js prompt Alert",
+              "fullTitle": "Alerts Js prompt Alert",
+              "timedOut": null,
+              "duration": 363,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://the-internet.herokuapp.com/javascript_alerts\");\ncy.window().then(win => {\n  cy.stub(win, 'prompt').returns('welcome');\n});\ncy.get('[onclick=\"jsPrompt()\"]').click(); //  cypress by default close alert by using ok button\ncy.get('#result').should('have.text', 'You entered: welcome');",
+              "err": {},
+              "uuid": "d362e9b2-d0cd-4c5b-89ba-2efb7e82746c",
+              "parentUUID": "ecfd3755-2027-4e06-a67a-b87c6f615bb6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Js prompt Alert",
+              "fullTitle": "Alerts Js prompt Alert",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://the-internet.herokuapp.com/javascript_alerts\");\ncy.window().then(win => {\n  cy.stub(win, 'prompt').returns('welcome');\n});\ncy.get('[onclick=\"jsPrompt()\"]').click();\n//  cy.on('window:prompt',() => false)//    cypress close alert window using cancel buttons\ncy.get('#result').should('have.text', 'You entered: null');",
+              "err": {},
+              "uuid": "9ff5d0e4-a1ce-408d-9234-57d543b95423",
+              "parentUUID": "ecfd3755-2027-4e06-a67a-b87c6f615bb6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Js prompt Alert",
+              "fullTitle": "Alerts Js prompt Alert",
+              "timedOut": null,
+              "duration": 277,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// approach 1 we can pass username pass in url in json format\ncy.visit(\"https://the-internet.herokuapp.com/basic_auth\", {\n  auth: {\n    username: 'admin',\n    password: 'admin'\n  }\n});\ncy.get('[class=\"example\"]').should('have.contain', 'Congratulations! You must have the proper credentials.');",
+              "err": {},
+              "uuid": "18f4c94f-b45f-4535-bf01-015eec42627a",
+              "parentUUID": "ecfd3755-2027-4e06-a67a-b87c6f615bb6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Js prompt Alert",
+              "fullTitle": "Alerts Js prompt Alert",
+              "timedOut": null,
+              "duration": 278,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// approach 1 we can pass username pass in url in json format\ncy.visit(\"https://admin:admin@the-internet.herokuapp.com/basic_auth\");\ncy.get('[class=\"example\"]').should('have.contain', 'Congratulations! You must have the proper credentials.');",
+              "err": {},
+              "uuid": "b0150a66-b104-4921-8186-a8b6d502edb2",
+              "parentUUID": "ecfd3755-2027-4e06-a67a-b87c6f615bb6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7020081a-447a-43a8-ba76-5c4e3cb0e757",
+            "388f9944-b4ac-4b30-84f1-2e16b51c66e7",
+            "086c1609-624a-4b78-a12d-65ed53125d12",
+            "d362e9b2-d0cd-4c5b-89ba-2efb7e82746c",
+            "18f4c94f-b45f-4535-bf01-015eec42627a",
+            "b0150a66-b104-4921-8186-a8b6d502edb2"
+          ],
+          "failures": [],
+          "pending": [
+            "9ff5d0e4-a1ce-408d-9234-57d543b95423"
+          ],
+          "skipped": [],
+          "duration": 3696,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

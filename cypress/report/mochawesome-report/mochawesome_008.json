@@ -1,0 +1,130 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-02-01T12:03:50.581Z",
+    "end": "2025-02-01T12:03:59.366Z",
+    "duration": 8785,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3c98529a-2723-4e94-bca0-ed64f77fc092",
+      "title": "",
+      "fullFile": "cypress/e2e/Learning web/MyFirstTest.cy.js",
+      "file": "cypress/e2e/Learning web/MyFirstTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6b209d66-8060-4be7-8ccf-59c444e2f5b5",
+          "title": "My First Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "First_TC_Positive_Scenario",
+              "fullTitle": "My First Test First_TC_Positive_Scenario",
+              "timedOut": null,
+              "duration": 2443,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/\");\ncy.title().should('eq', 'OrangeHRM');",
+              "err": {},
+              "uuid": "f5bac119-8bbe-4cce-8fb6-dd233408065d",
+              "parentUUID": "6b209d66-8060-4be7-8ccf-59c444e2f5b5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_2_Negative_Scenario",
+              "fullTitle": "My First Test TC_2_Negative_Scenario",
+              "timedOut": null,
+              "duration": 4762,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/\");\ncy.title().should('eq', 'googlii');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'OrangeHRM' to equal 'googlii'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'OrangeHRM' to equal 'googlii'\n    at Context.eval (webpack://cypressautomation/./cypress/e2e/Learning web/MyFirstTest.cy.js:14:19)",
+                "diff": "- 'OrangeHRM'\n+ 'googlii'\n"
+              },
+              "uuid": "1258db5e-9eef-4443-8b09-a8380cd19ce7",
+              "parentUUID": "6b209d66-8060-4be7-8ccf-59c444e2f5b5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f5bac119-8bbe-4cce-8fb6-dd233408065d"
+          ],
+          "failures": [
+            "1258db5e-9eef-4443-8b09-a8380cd19ce7"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 7205,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

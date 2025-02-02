@@ -1,0 +1,153 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-02-01T12:03:45.656Z",
+    "end": "2025-02-01T12:03:49.872Z",
+    "duration": 4216,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d47d1cc5-dbe8-4a34-8e5b-29ba3179df9a",
+      "title": "",
+      "fullFile": "cypress/e2e/Learning web/Mouseoperation.cy.js",
+      "file": "cypress/e2e/Learning web/Mouseoperation.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4916ba10-bf56-4dd9-aa38-bee54f7f5e97",
+          "title": "MouseHover",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Mouseover TC ",
+              "fullTitle": "MouseHover Mouseover TC ",
+              "timedOut": null,
+              "duration": 961,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://demo.opencart.com');\ncy.wait(3000);\ncy.get('#narbar-menu > ul > li:nth-child(1) > div > div > ul > li:nth-child(2) > a').should('not.be.visible');\ncy.get('.nav > :nth-child(1) > .dropdown-toggle').trigger('mouseover').click();\ncy.get('#narbar-menu > ul > li:nth-child(1) > div > div > ul > li:nth-child(2) > a').should('be.visible');",
+              "err": {
+                "message": "ReferenceError: bootstrap is not defined",
+                "estack": "ReferenceError: bootstrap is not defined\n    at HTMLDocument.<anonymous> (https://demo.opencart.com/:353:5)\n    at e (https://demo.opencart.com/catalog/view/javascript/jquery/jquery-3.7.1.min.js:2:27028)\n    at t (https://demo.opencart.com/catalog/view/javascript/jquery/jquery-3.7.1.min.js:2:27330)\n    at o (https://demo.opencart.com/:3:417)\n    at https://demo.opencart.com/:3:790",
+                "diff": null
+              },
+              "uuid": "7c0c4e21-d092-47f1-9214-8ebd71950d22",
+              "parentUUID": "4916ba10-bf56-4dd9-aa38-bee54f7f5e97",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Right Click Action approach 1",
+              "fullTitle": "MouseHover Right Click Action approach 1",
+              "timedOut": null,
+              "duration": 911,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://swisnl.github.io/jQuery-contextMenu/demo.html');\ncy.get('[class=\"context-menu-one btn btn-neutral\"]').trigger('contextmenu');\ncy.get('.context-menu-icon-copy').should('be.visible');\n// approach 2\ncy.visit('https://swisnl.github.io/jQuery-contextMenu/demo.html');\ncy.get('[class=\"context-menu-one btn btn-neutral\"]').rightclick().should('be.visible');",
+              "err": {},
+              "uuid": "111d573e-1454-4471-aeed-341a55b873b5",
+              "parentUUID": "4916ba10-bf56-4dd9-aa38-bee54f7f5e97",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "double click ",
+              "fullTitle": "MouseHover double click ",
+              "timedOut": null,
+              "duration": 188,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick3');\ncy.frameLoaded('div#iframewrapper'); // iframe locator we have to use plug in for cy.load\n// approach 1 - trigger()\ncy.iframe('div#iframewrapper').find('[ondblclick=\"myFunction()\"]').trigger('dblclick').find('#field2').should('have.value', 'Hello World!');\n// approach  2 -- dblclick()\ncy.iframe('div#iframewrapper').find('[ondblclick=\"myFunction()\"]').dblclick.find('#field2').should('have.value', 'Hello World!');",
+              "err": {
+                "message": "TypeError: cy.iframe(...).find(...).dblclick.find is not a function",
+                "estack": "TypeError: cy.iframe(...).find(...).dblclick.find is not a function\n    at Context.eval (webpack://cypressautomation/./cypress/e2e/Learning web/Mouseoperation.cy.js:43:5)\n    at runnable.fn (https://swisnl.github.io/__cypress/runner/cypress_runner.js:137464:19)\n    at callFn (https://swisnl.github.io/__cypress/runner/cypress_runner.js:156061:21)\n    at Runnable.run (https://swisnl.github.io/__cypress/runner/cypress_runner.js:156048:7)\n    at <unknown> (https://swisnl.github.io/__cypress/runner/cypress_runner.js:161972:30)\n    at PassThroughHandlerContext.finallyHandler (https://swisnl.github.io/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://swisnl.github.io/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://swisnl.github.io/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://swisnl.github.io/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "9ef82e7a-1cf6-4b18-8852-904cb84bdd26",
+              "parentUUID": "4916ba10-bf56-4dd9-aa38-bee54f7f5e97",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "111d573e-1454-4471-aeed-341a55b873b5"
+          ],
+          "failures": [
+            "7c0c4e21-d092-47f1-9214-8ebd71950d22",
+            "9ef82e7a-1cf6-4b18-8852-904cb84bdd26"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2060,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
